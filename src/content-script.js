@@ -32,15 +32,8 @@ const onChange = () => {
 
 getSettings(defaultSettings).then(() => {
   // console.log(settings);
-  // window.addEventListener('DOMContentLoaded', event => { console.log(event); }, false);
-  // window.addEventListener('onreadystatechange', event => { console.log(event); });
-  window.addEventListener('load', onChange);
-  window.addEventListener('pjax:success', onChange);
-  // window.addEventListener('pjax:end', event => { console.log(event); });
-  // window.addEventListener('scroll', event => { console.log(event); });
-  // window.addEventListener('statechange', event => { console.log(event); });
-  // window.addEventListener('submit', event => { console.log(event); });
-
+  const observer = new MutationObserver(onChange);
+  observer.observe(document.body, { attributes: true, childList: true, subtree: true });
 }).catch(err => {
   console.error('An error occurred with WaveDrom. Please report an issue on GitHub');
   console.error(err);
