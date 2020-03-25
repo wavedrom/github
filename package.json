@@ -11,7 +11,7 @@
     "build:manifest": "node src/manifest.js > dist/manifest.json",
     "copy": "cp assets/*.* dist",
     "clean": "rimraf dist && mkdir dist",
-    "release": "build && webstore upload --source dist --auto-publish"
+    "release": "npm run ubuild && webstore upload --source dist --auto-publish"
   },
   "repository": {
     "type": "git",

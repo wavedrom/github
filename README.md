@@ -4,13 +4,13 @@
 
 ## Install
 
-* [ ] Chrome extension
+* [x] [Chrome extension](https://chrome.google.com/webstore/detail/wavedrom/ckplfgniaofnlpelgjkmbeeilfbbnboi)
 * [ ] Firefox extension
 
 ## Features
 
 * replace `wavedrom` marked text sections with diagrams
-  - [ ] markdown
+  - [x] markdown
   - [ ] adoc
   - [ ] issues
   - [ ] ???
