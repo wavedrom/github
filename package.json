@@ -1,0 +1,39 @@
+{
+  "name": "github",
+  "version": "0.1.0",
+  "description": "Browser extension that shows WaveDrom diagrams on GitHub page",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint src",
+    "build": "npm run clean && npm run build:content && npm run build:options && npm run build:manifest && npm run copy",
+    "build:content": "browserify -v -d src/content-script.js -o dist/content-script.js",
+    "build:options": "browserify -v -d src/options.js -o dist/options.js",
+    "build:manifest": "node src/manifest.js > dist/manifest.json",
+    "copy": "cp src/*.html dist",
+    "clean": "rimraf dist && mkdir dist",
+    "release": "build && webstore upload --source dist --auto-publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wavedrom/github.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wavedrom/github/issues"
+  },
+  "homepage": "https://github.com/wavedrom/github#readme",
+  "devDependencies": {
+    "@drom/eslint-config": "^0.10.0",
+    "browserify": "^16.5.0",
+    "chrome-webstore-upload-cli": "^1.2.0",
+    "eslint": "^6.8.0",
+    "json5": "^2.1.2",
+    "rimraf": "^3.0.2",
+    "wavedrom": "^2.3.2"
+  },
+  "eslintConfig": {
+    "extends": "@drom/eslint-config/eslint4/node8"
+  }
+}
