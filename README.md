@@ -10,10 +10,10 @@
 ## Features
 
 * replace `wavedrom` marked text sections with diagrams
-  - [x] markdown
-  - [ ] adoc
-  - [ ] issues
-  - [ ] ???
+  - [x] [markdown](https://github.com/wavedrom/wavedrom/blob/master/test/test.md)
+  - [x] [adoc](https://github.com/wavedrom/wavedrom/blob/master/test/test.adoc)
+  - [x] [issues](https://github.com/wavedrom/wavedrom/issues/286)
+  - [ ] Preview Tab
 
 ## Developing
 
