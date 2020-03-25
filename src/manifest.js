@@ -15,7 +15,7 @@ const manifest = {
     chrome_style: true
   },
   content_scripts: [{
-    matches: ['*://github.com/*'],
+    matches: ['https://*.github.com/*'],
     js: ['content-script.js'],
     run_at: 'document_idle'
   }],
