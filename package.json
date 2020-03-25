@@ -9,7 +9,7 @@
     "build:content": "browserify -v -d src/content-script.js -o dist/content-script.js",
     "build:options": "browserify -v -d src/options.js -o dist/options.js",
     "build:manifest": "node src/manifest.js > dist/manifest.json",
-    "copy": "cp src/*.html dist",
+    "copy": "cp assets/*.* dist",
     "clean": "rimraf dist && mkdir dist",
     "release": "build && webstore upload --source dist --auto-publish"
   },
@@ -18,7 +18,7 @@
     "url": "git+https://github.com/wavedrom/github.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "WaveDrom",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/wavedrom/github/issues"

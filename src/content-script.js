@@ -10,8 +10,8 @@ const defaultSettings = Object.keys(optionsSchema).reduce((agg, key) => {
   return agg;
 }, {});
 
-getSettings(defaultSettings).then(settings => {
-  console.log(settings);
+const onChange = () => {
+  // console.log(event);
   const items = document.querySelectorAll('pre[lang="wavedrom"]');
   let i = 0;
   for (let el of items) {
@@ -28,6 +28,19 @@ getSettings(defaultSettings).then(settings => {
     newEl.innerHTML = svg;
     el.parentNode.replaceChild(newEl, el);
   }
+};
+
+getSettings(defaultSettings).then(() => {
+  // console.log(settings);
+  // window.addEventListener('DOMContentLoaded', event => { console.log(event); }, false);
+  // window.addEventListener('onreadystatechange', event => { console.log(event); });
+  window.addEventListener('load', onChange);
+  window.addEventListener('pjax:success', onChange);
+  // window.addEventListener('pjax:end', event => { console.log(event); });
+  // window.addEventListener('scroll', event => { console.log(event); });
+  // window.addEventListener('statechange', event => { console.log(event); });
+  // window.addEventListener('submit', event => { console.log(event); });
+
 }).catch(err => {
   console.error('An error occurred with WaveDrom. Please report an issue on GitHub');
   console.error(err);
