@@ -1,6 +1,6 @@
 {
   "name": "github",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Browser extension that shows WaveDrom diagrams on GitHub page",
   "main": "index.js",
   "scripts": {
