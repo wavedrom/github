@@ -14,6 +14,11 @@ const manifest = {
     page: 'options.html',
     chrome_style: true
   },
+  applications: {
+    gecko: {
+      id: '{5e76c1cd-894e-42d8-be16-884430d7898a}'
+    }
+  },
   content_scripts: [{
     matches: ['https://*.github.com/*'],
     js: ['content-script.js'],
@@ -29,4 +34,6 @@ manifest.icons = [16, 32, 48, 128].reduce((res, size) => {
   return res;
 }, {});
 
-console.log(JSON.stringify(manifest, null, 4));
+console.log(JSON.stringify(manifest, null, 2));
+
+/* eslint camelcase: 0 */

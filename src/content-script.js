@@ -10,7 +10,7 @@ const defaultSettings = Object.keys(optionsSchema).reduce((agg, key) => {
   return agg;
 }, {});
 
-const onChange = () => {
+const onChange = (/*event*/) => {
   // console.log(event);
   const items = document.querySelectorAll('pre[lang="wavedrom"]');
   let i = 0;
@@ -30,14 +30,22 @@ const onChange = () => {
   }
 };
 
-getSettings(defaultSettings).then(() => {
+getSettings(defaultSettings).then((/*settings*/) => {
   // console.log(settings);
+  onChange();
+
+  // ['DOMContentLoaded']
+  //   .map(e => document.addEventListener(e, onChange));
+  //
+  // ['DOMContentLoaded', 'load', 'pjax:success', 'submit']
+  //   .map(e => window.addEventListener(e, onChange));
+
   const observer = new MutationObserver(onChange);
   observer.observe(document.body, { attributes: true, childList: true, subtree: true });
+
 }).catch(err => {
   console.error('An error occurred with WaveDrom. Please report an issue on GitHub');
   console.error(err);
 });
-module.exports = {};
 
 /* eslint-env browser */
