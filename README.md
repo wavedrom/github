@@ -5,7 +5,7 @@
 ## Install
 
 * [x] [Chrome extension](https://chrome.google.com/webstore/detail/wavedrom/ckplfgniaofnlpelgjkmbeeilfbbnboi)
-* [ ] Firefox extension
+* [x] [Firefox extension](https://addons.mozilla.org/en-US/firefox/addon/wavedrom)
 
 ## Features
 
