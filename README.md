@@ -1,6 +1,6 @@
 :construction: Work In Progress :construction:
 
-:octocat: Browser extension that shows WaveDrom diagrams on GitHub page
+Browser extension that shows WaveDrom diagrams on **GitHub** and **GitLab** page
 
 ## Install
 
@@ -10,11 +10,13 @@
 ## Features
 
 * replace `wavedrom` marked text sections with diagrams
+* on Github
   - [x] [markdown](https://github.com/wavedrom/wavedrom/blob/master/test/test.md)
   - [x] [adoc](https://github.com/wavedrom/wavedrom/blob/master/test/test.adoc)
   - [x] [issues](https://github.com/wavedrom/wavedrom/issues/286)
   - [x] [gist](https://gist.github.com/drom/f43021140c969771ca0fcc28fea1acf0)
   - [ ] Preview Tab
+* on Gitlab https://gitlab.com/drom/wavedrom-test
 
 ## Developing
 
