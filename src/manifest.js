@@ -20,6 +20,10 @@ const manifest = {
     }
   },
   content_scripts: [{
+    matches: ['https://*.gitlab.com/*'],
+    js: ['content-script.js'],
+    run_at: 'document_idle'
+  }, {
     matches: ['https://*.github.com/*'],
     js: ['content-script.js'],
     run_at: 'document_idle'

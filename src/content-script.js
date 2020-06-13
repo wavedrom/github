@@ -12,21 +12,33 @@ const defaultSettings = Object.keys(optionsSchema).reduce((agg, key) => {
 
 const onChange = (/*event*/) => {
   // console.log(event);
-  const items = document.querySelectorAll('pre[lang="wavedrom"]');
+  const items = document.querySelectorAll('pre:not([wavedrom])');
   let i = 0;
   for (let el of items) {
-    // console.log(el);
     const txt = el.innerText;
-    // console.log(txt);
-    const obj = json5.parse(txt);
-    // console.log(obj);
-    const ml = wavedrom.renderAny(i++, obj, wavedrom.waveSkin);
-    // console.log(ml);
-    const svg = wavedrom.onml.stringify(ml);
-    // console.log(svg);
-    const newEl = document.createElement('div');
-    newEl.innerHTML = svg;
-    el.parentNode.replaceChild(newEl, el);
+    try {
+      const obj = json5.parse(txt);
+      // console.log(obj);
+      const ml = wavedrom.renderAny(i++, obj, wavedrom.waveSkin);
+      if (ml[0] === 'svg') {
+        const svg = wavedrom.onml.stringify(ml);
+        // console.log(svg);
+        const newEl = document.createElement('div');
+        newEl.innerHTML = svg;
+        const detailsEl = document.createElement('details');
+
+        const wrapEl = document.createElement('div');
+        wrapEl.appendChild(newEl);
+        wrapEl.appendChild(detailsEl);
+        el.parentNode.replaceChild(wrapEl, el);
+        el.setAttribute('wavedrom', 1);
+        // console.log(el);
+        detailsEl.appendChild(el);
+      }
+    } catch (err) {
+      el.setAttribute('wavedrom', 0);
+      // console.log('+');
+    }
   }
 };
 
