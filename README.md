@@ -1,5 +1,3 @@
-:construction: Work In Progress :construction:
-
 Browser extension that shows WaveDrom diagrams on **GitHub** and **GitLab** page
 
 ## Install
@@ -21,7 +19,6 @@ Browser extension that shows WaveDrom diagrams on **GitHub** and **GitLab** page
 ## Developing
 
 1. Clone the repository
-2. Run `npm run watch` to enable rebuilds on change
-3. Load the `dist` folder as an [unpacked extension](https://developer.chrome.com/extensions/getstarted#unpacked) in Chrome
-
-:construction: Work In Progress :construction:
+2. Run `npm i` to install dependencies
+3. Run `npm run build` to build an Add-on
+4. Load the `dist` folder as an [unpacked extension](https://developer.chrome.com/extensions/getstarted#unpacked) in Chrome
