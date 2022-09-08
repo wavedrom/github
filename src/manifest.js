@@ -27,6 +27,10 @@ const manifest = {
     matches: ['https://*.github.com/*'],
     js: ['content-script.js'],
     run_at: 'document_idle'
+  }, {
+    matches: ['https://*.ieee.org/*'],
+    js: ['content-script.js'],
+    run_at: 'document_idle'
   }],
   web_accessible_resources: [
     'pagenav-listener.js'
