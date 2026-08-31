@@ -15,7 +15,10 @@ const manifest = {
   },
   browser_specific_settings: {
     gecko: {
-      id: '{5e76c1cd-894e-42d8-be16-884430d7898a}'
+      id: '{5e76c1cd-894e-42d8-be16-884430d7898a}',
+      data_collection_permissions: {
+        required: ['none']
+      }
     }
   },
   content_scripts: [{
