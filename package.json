@@ -6,11 +6,11 @@
   "scripts": {
     "test": "eslint src",
     "build": "npm run clean && npm run build:content && npm run build:options && npm run build:manifest && npm run copy",
-    "build:content": "browserify -v -d src/content-script.js -o dist/content-script.js",
-    "build:options": "browserify -v -d src/options.js -o dist/options.js",
+    "build:content": "esbuild src/content-script.js --bundle --outfile=dist/content-script.js",
+    "build:options": "esbuild src/options.js --bundle --outfile=dist/options.js",
     "build:manifest": "node src/manifest.js > dist/manifest.json",
     "copy": "cp assets/*.* dist",
-    "clean": "rimraf dist && mkdir dist",
+    "clean": "rm -rf dist && mkdir dist",
     "release": "npm run build && webstore upload --source dist --auto-publish"
   },
   "repository": {
@@ -26,14 +26,11 @@
   "homepage": "https://github.com/wavedrom/github#readme",
   "devDependencies": {
     "@drom/eslint-config": "^1.0.0",
-    "browserify": "^17.0.0",
     "chrome-webstore-upload-cli": "^4.0.1",
-    "eslint": "^8.57.1",
+    "esbuild": "^0.28.2",
+    "eslint": "^9.39.5",
+    "globals": "^17.11.0",
     "json5": "^2.2.1",
-    "rimraf": "^3.0.2",
-    "wavedrom": "^3.6.2"
-  },
-  "eslintConfig": {
-    "extends": "@drom/eslint-config/eslint4/node8"
+    "wavedrom": "^3.7.0"
   }
 }

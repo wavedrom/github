@@ -35,7 +35,7 @@ const onChange = (/*event*/) => {
         // console.log(el);
         detailsEl.appendChild(el);
       }
-    } catch (err) {
+    } catch {
       el.setAttribute('wavedrom', 0);
       // console.log('+');
     }
@@ -60,4 +60,4 @@ getSettings(defaultSettings).then((/*settings*/) => {
   console.error(err);
 });
 
-/* eslint-env browser */
+

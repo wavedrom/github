@@ -67,5 +67,4 @@ document.querySelector('.save-btn').addEventListener('click', () => {
   saveSettings(settings);
 });
 
-/* eslint-env browser */
 /* global chrome */
